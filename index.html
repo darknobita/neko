@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content=" initial-scale=1.0">
     <title>Random Neko Background</title>
     <style>
+        h1 {
+            position: absolute;
+        }
+
         body {
-            margin: 0;
+            margin: randomly;
             height: 100vh;
-            background-size: 1280px 920px; /* Change to 'contain' or specific size if needed */
+            background-size: 1280px 920px;
+            /* Change to 'contain' or specific size if needed */
             background-position: center;
             background-repeat: no-repeat;
             display: flex;
@@ -18,24 +24,23 @@
             font-size: 48px;
             font-family: Arial, sans-serif;
         }
-        h1 {
-            position: absolute;
-        }
     </style>
 </head>
+
 <body>
-    <h1 id="randomHeading" >Enjoy the random neko!</h1>
+    <h1>Enjoy the random neko!</h1>
 
     <script>
         fetch('https://nekos.best/api/v2/neko')
-        .then(response => response.json())
-        .then(data => {
-            const imageUrl = data.results[0].url;
-            document.body.style.backgroundImage = `url('${imageUrl}')`;
-            // You can change the background size programmatically here if needed:
-            // document.body.style.backgroundSize = 'contain'; // or '100% 100%' or '500px 300px'
-        })
-        .catch(error => console.error('Error fetching the neko image:', error));
+            .then(response => response.json())
+            .then(data => {
+                const imageUrl = data.results[0].url;
+                document.body.style.backgroundImage = `url('${imageUrl}')`;
+                // You can change the background size programmatically here if needed:
+                // document.body.style.backgroundSize = 'contain'; // or '100% 100%' or '500px 300px'
+            })
+            .catch(error => console.error('Error fetching the neko image:', error));
     </script>
 </body>
+
 </html>
