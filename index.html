@@ -28,7 +28,7 @@
 </head>
 
 <body>
-    <h1>Enjoy the random neko!</h1>
+    
 
     <script>
         fetch('https://nekos.best/api/v2/neko')
@@ -37,10 +37,12 @@
                 const imageUrl = data.results[0].url;
                 document.body.style.backgroundImage = `url('${imageUrl}')`;
                 // You can change the background size programmatically here if needed:
-                // document.body.style.backgroundSize = 'contain'; // or '100% 100%' or '500px 300px'
+                // document.body.style.backgroundSize = 'contain'; // or '100% 100%'
             })
             .catch(error => console.error('Error fetching the neko image:', error));
     </script>
+<br> 
+<h1>Enjoy the random neko!</h1>
 </body>
 
 </html>
